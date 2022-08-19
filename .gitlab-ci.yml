@@ -25,7 +25,7 @@ cache:
   script:
     - echo "SELECT 'OK';" | mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --host=mysql "$MYSQL_DATABASE"
   only:
-    - migrate-crow-store
+    - feature/migrate-crow-store
 
 2-composer:
   stage: building
