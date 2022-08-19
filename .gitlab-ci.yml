@@ -46,7 +46,8 @@ cache:
     command: ["--default-authentication-plugin=mysql_native_password"]
   script:
     - mysql --version
-    - php artisan migrate --force
+    - php artisan migrate --path=database/migrations/crow_empty
+    - php artisan migrate
     - php artisan migrate:fresh --seed
     - mysqldump --host=mysql --user=root --password="${MYSQL_ROOT_PASSWORD}" "${MYSQL_DATABASE}" > db.sql
   artifacts:
