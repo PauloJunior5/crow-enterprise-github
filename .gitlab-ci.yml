@@ -36,7 +36,7 @@ cache:
     - cp .env.example .env
     - php artisan key:generate
   only:
-    - migrate-crow-store
+    - feature/migrate-crow-store
 
 3-db-seeding:
   stage: building
@@ -56,7 +56,7 @@ cache:
     expire_in: 1 days
     when: always
   only:
-    - migrate-crow-store
+    - feature/migrate-crow-store
 
 # 4-phpunit:
 #   stage: testing
@@ -90,7 +90,7 @@ cache:
     - git remote add production "$USERNAME"@"$HOST":/var/www/crow-enterprise.git
     - git remote -v
     - git status
-    # - git push -f production HEAD:migrate-crow-store
+    # - git push -f production HEAD:feature/migrate-crow-store
   only:
-    - migrate-crow-store
+    - feature/migrate-crow-store
   when: manual
