@@ -95,7 +95,7 @@ cache:
   only:
     - feature/migrate-crow-store
   when: manual
-5-normal-stores:
+6-normal-stores:
   stage: deploying
   needs: ["3-db-seeding"]
   script:
